@@ -1,0 +1,13 @@
+[Unit]
+Description=Trend music bot
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+Type=simple
+WorkingDirectory=/home/ubuntu/Trend_music_bot
+ExecStart=/home/ubuntu/Trend_music_bot/venv/bin/python app.py
+
+[Install]
+WantedBy=multi-user.target
