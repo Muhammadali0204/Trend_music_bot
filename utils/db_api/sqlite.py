@@ -94,10 +94,10 @@ class Database:
         return self.execute(sql=f"SELECT * FROM Data WHERE nomi LIKE '%{nom}%'", fetchall=True)
         
     def select_data_turi_ordered(self, turi):
-        return self.execute(sql="SELECT * FROM Data WHERE turi = ? ORDER BY status", parameters=(turi,), fetchall=True)
+        return self.execute(sql="SELECT * FROM Data WHERE turi = ? ORDER BY status DESC", parameters=(turi,), fetchall=True)
         
     def select_top(self):
-        return self.execute(sql="SELECT * FROM Data ORDER BY status", fetchall=True)
+        return self.execute(sql="SELECT * FROM Data ORDER BY status DESC", fetchall=True)
     
     def add_data(self, nomi, file_id, turi, status):
         self.execute(sql="INSERT INTO Data(nomi, file_id, turi, status) VALUES(?, ?, ?, ?)",parameters=(nomi, file_id, turi, status) ,commit=True)
