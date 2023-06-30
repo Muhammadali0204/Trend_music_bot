@@ -9,6 +9,9 @@ menu = ReplyKeyboardMarkup(
         ],
         [
             KeyboardButton(text="Musiqa qo'shish")
+        ],
+        [
+            KeyboardButton(text="Reklama")
         ]
     ]
 )
