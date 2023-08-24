@@ -9,7 +9,7 @@ def inline_list(data):
             types.InlineQueryResultVoice(
                 id=d[0],
                 voice_url=d[2],
-                title=d[1],
+                caption=d[1]
             )
         )
     return listt
