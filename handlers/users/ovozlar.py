@@ -24,7 +24,7 @@ async def ovoz_ortga(msg : types.Message, state : FSMContext):
 async def ovoz_junatish(msg : types.Message):
     ovoz = data.select_data_nom(msg.text)
     if ovoz != None:
-        await msg.answer_voice(ovoz[2], caption=ovoz[1])
+        await msg.answer_voice(ovoz[2])
         data.update_status(ovoz[0], (ovoz[4] + 1))
     else:
         ovozlar = data.select_data_turi_ordered("Ovoz")

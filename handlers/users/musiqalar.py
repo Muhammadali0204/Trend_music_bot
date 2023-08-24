@@ -24,7 +24,7 @@ async def musiqa_ortga(msg : types.Message, state : FSMContext):
 async def musiqa_junatish(msg : types.Message):
     musiqa = data.select_data_nom(msg.text)
     if musiqa != None:
-        await msg.answer_audio(musiqa[2], caption=musiqa[1])
+        await msg.answer_audio(musiqa[2])
         data.update_status(musiqa[0], (musiqa[4] + 1))
     else:
         musiqalar = data.select_data_turi_ordered("Musiqa")
