@@ -1,8 +1,14 @@
 from aiogram import types
+from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.builtin import CommandStart
 from keyboards.default import menu
 from loader import dp, db_users
 
+
+@dp.message_handler(text="/menu", state = "*")
+async def jskj(msg : types.Message, state : FSMContext):
+    await msg.answer("<b>Menu : </b>", reply_markup=menu.menu)
+    await state.finish()
 
 @dp.message_handler(CommandStart())
 async def bot_start(msg: types.Message):
@@ -12,4 +18,4 @@ async def bot_start(msg: types.Message):
         
     await msg.answer(f"<b>Assalomu alaykum, {msg.from_user.get_mention(msg.from_user.first_name)}\n\nBotimizdan trendga chiqqan qiziqarli musiqa va ovozlarni topishingiz mumkin 😄</b>", reply_markup=menu.menu)
     
-    
+
