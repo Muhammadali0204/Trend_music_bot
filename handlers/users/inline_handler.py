@@ -5,9 +5,8 @@ from keyboards.inline import inline_query
 from loader import dp, db_users, data
 
 
-
 @dp.inline_handler()
-async def inline_query1(query : types.InlineQuery):
+async def inline_query1(query: types.InlineQuery):
     text = query.query
     if text != None:
         ovozlar = data.select_data_nomlar(text)

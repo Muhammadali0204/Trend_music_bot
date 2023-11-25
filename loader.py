@@ -9,18 +9,14 @@ storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 db_users = sqlite.Database("data/Users.db")
 data = sqlite.Database("data/Data.db")
-try : 
+try:
     db_users.create_table_users()
-except :
+except:
     pass
 
-try : 
+try:
     data.create_table_data()
-except :
+except:
     pass
 
 temp = {}
-
-
-
-

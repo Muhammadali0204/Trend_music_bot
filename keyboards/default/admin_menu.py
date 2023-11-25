@@ -7,11 +7,7 @@ menu = ReplyKeyboardMarkup(
         [
             KeyboardButton(text="Ovoz qo'shish"),
         ],
-        [
-            KeyboardButton(text="Musiqa qo'shish")
-        ],
-        [
-            KeyboardButton(text="Reklama")
-        ]
-    ]
+        [KeyboardButton(text="Musiqa qo'shish")],
+        [KeyboardButton(text="Reklama")],
+    ],
 )
